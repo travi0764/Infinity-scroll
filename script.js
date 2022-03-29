@@ -3,6 +3,7 @@ const loader = document.getElementById('loader');
 
 const count = 10;
 const apiKey = "4gdDBq8jXDF-fs4kKlYl3F1l1EfEMmNuUeTe8bDKbHs";
+const proxyUrl = 'https://whispering-tor-04671.herokuapp.com/';
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
 let photosArray = [];
@@ -33,7 +34,7 @@ function displayPhotos(){
 
 async function getPhotos(){
     try {
-        const respose = await fetch(apiUrl);
+        const respose = await fetch(proxyUrl+apiUrl);
         photosArray = await respose.json();
         // console.log(photosArray[2]);
         displayPhotos();
